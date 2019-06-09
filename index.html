@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="signupext.css">
+	<script type="text/javascript">
+        function validateForm() {
+        var x = document.forms["signup"]["email"].value;
+	
+        if (x != "") {
+            if(validateEmail()==true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        function validateEmail()
+      {
+         var emailID = document.signup.email.value;
+         atpos = emailID.indexOf("@");
+         dotpos = emailID.lastIndexOf(".");
+         
+         if (atpos < 1 || ( dotpos - atpos < 2 )) 
+         {
+            alert("Please enter correct email ID");
+            document.signup.email.focus();
+            return false;
+         }
+         return( true );
+      }
+}
+    </script>
+</head>
+<body>
+
+    <!-- <div class="parallax"></div> -->
+
+<form name="signup" onsubmit="return(validateForm());" style="border:1px solid #ccc">
+  <div class="container">
+
+    <h1 style="color:white">Sign Up</h1>
+    <p style="color:white">Please fill in this form to create an account.</p>
+    <hr>
+    <label for="fname"><b>Full Name</b></label><br>
+    <input type="text" placeholder="eg. John Smith" name="fname" required><br> 
+
+    <label for="phone"><b>Phone Number</b></label><br>
+    <input type="number" placeholder="eg. 8782345692" name="phone" required><br>
+
+    <label for="email"><b>Email</b></label><br>
+    <input type="text" placeholder="eg. Johnsmith@some.com" name="email" required><br>
+
+    <label for="psw"><b>Password</b></label><br>
+    <input type="password" placeholder="Enter Password" name="psw" required><br>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label><br>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required><br>
+    
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+    
+    <p style="color:white">By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Conditions</a>
+    </p>
+    <p style="color:white">Your e-mail ID will be your username.</p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+
+  </div>
+</form>
+
+</body>
+</html>
+
