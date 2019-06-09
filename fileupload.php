@@ -16,8 +16,6 @@ $safeExtensions = array(
     '.txt',
     '.pdf'
   );  
-  
-
 
 preg_match('/^(.*?)(\.\w+)?$/', $name, $matches);
 
